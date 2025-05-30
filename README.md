@@ -1,5 +1,20 @@
-<<<<<<< HEAD
-# Calories-Burn-Predictor
-=======
-# Calories-Burn-Predictor-Project
->>>>>>> ac4b37f1163b645d0dd82e00f852d6bc68809717
+🔥 Calories Burn Predictor
+
+A Flask-based web application that predicts calories burned during exercise using a machine learning model.
+
+🚀 Features
+- Upload or enter workout data
+- Predict calories burned
+- Clean Bootstrap-based UI
+
+🧠 Model
+Model trained on physical activity dataset, saved as calories_model.pkl.
+
+🛠 Tech Stack
+- Python
+- Flask
+- scikit-learn
+- Bootstrap (HTML/CSS)
+
+
+
