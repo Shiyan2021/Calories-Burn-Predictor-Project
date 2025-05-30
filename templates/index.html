@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calories Burned Predictor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-image: url("/static/fitness.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .card {
+            background-color: rgba(95, 91, 91, 0.91);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto; /* center the card */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        
+
+        h2 {
+            font-weight: bold;
+            color:rgb(248, 250, 251);
+        }
+
+        .form-group label {
+            color: white;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card p-4 shadow">
+        <h2 class="text-center mb-4">Calories Burned Predictor</h2>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label>Gender</label>
+                <select name="gender" class="form-control">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" name="age" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Height (cm)</label>
+                <input type="number" name="height" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Weight (kg)</label>
+                <input type="number" name="weight" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Duration (mins)</label>
+                <input type="number" name="duration" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Heart Rate (bpm)</label>
+                <input type="number" name="heart_rate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Body Temperature (°C)</label>
+                <input type="number" name="body_temp" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="alert alert-info text-center mt-3" style="font-weight: 600; font-size: 1.2rem;">
+            {{ prediction_text }}
+        </div>
+        {% endif %}
+
+        {% if meal_text %}
+        <div class="alert alert-success text-center mt-2" style="font-weight: 500; font-size: 1rem;">
+            {{ meal_text }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

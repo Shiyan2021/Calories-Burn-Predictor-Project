@@ -1,0 +1,53 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("/static/gym3.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .card {
+            background-color: rgba(172, 255, 195, 0.9);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 100px auto;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        .alert {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card text-center">
+        <h2 class="mb-4">Prediction Results</h2>
+
+        {% if prediction_text %}
+        <div class="alert alert-info">{{ prediction_text }}</div>
+        {% endif %}
+
+        {% if meal_text %}
+        <div class="alert alert-success">{{ meal_text }}</div>
+        {% endif %}
+
+        <a href="/" class="btn btn-primary mt-3">Predict Again</a>
+    </div>
+</div>
+</body>
+</html>
